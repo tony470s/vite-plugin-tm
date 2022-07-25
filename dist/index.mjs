@@ -436,7 +436,7 @@ function defineTmHeader(options) {
   return options;
 }
 export {
-  tampermonkeyPlugin as TMPlugin,
+  tampermonkeyPlugin as default,
   defineTmHeader
 };
 //# sourceMappingURL=index.mjs.map

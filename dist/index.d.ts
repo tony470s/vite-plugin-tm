@@ -27,4 +27,4 @@ declare function tampermonkeyPlugin(options?: TMPluginOptions): Plugin[];
 
 declare function defineTmHeader(options: TmHeaderConfig): TmHeaderConfig;
 
-export { tampermonkeyPlugin as TMPlugin, defineTmHeader };
+export { tampermonkeyPlugin as default, defineTmHeader };
