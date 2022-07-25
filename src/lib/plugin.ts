@@ -59,6 +59,7 @@ export function tampermonkeyPlugin(options: TMPluginOptions = {}): Plugin[] {
       moduleParsed,
       configureServer(server) {
         return () => {
+          debugger;
           const isHttps = !!server.config.server.https;
           server.httpServer?.on("listening", () => {
             debugger;
@@ -66,6 +67,7 @@ export function tampermonkeyPlugin(options: TMPluginOptions = {}): Plugin[] {
             address && showInstallLog(isHttps, address);
           });
           server.middlewares.use((request, response, next) => {
+            debugger;
             let scheme_result = isHttps ? "https" : "http";
             if (request.url === DEV_TAMPERMONKEY_PATH) {
               const address = getAddress(server.httpServer?.address());

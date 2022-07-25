@@ -187,7 +187,7 @@ function getDefinedConfig() {
   if (fs.existsSync(jsonPath)) {
     return readJSON(jsonPath);
   }
-  const jsPath = path.resolve(root, "header.config.mjs");
+  const jsPath = path.resolve(root, "header.config.js");
   if (fs.existsSync(jsPath)) {
     return __require(jsPath);
   }
@@ -353,6 +353,7 @@ function tampermonkeyPlugin(options = {}) {
       configureServer(server) {
         return () => {
           var _a;
+          debugger;
           const isHttps = !!server.config.server.https;
           (_a = server.httpServer) == null ? void 0 : _a.on("listening", () => {
             var _a2;
@@ -362,6 +363,7 @@ function tampermonkeyPlugin(options = {}) {
           });
           server.middlewares.use((request, response, next) => {
             var _a2;
+            debugger;
             let scheme_result = isHttps ? "https" : "http";
             if (request.url === DEV_TAMPERMONKEY_PATH) {
               const address = getAddress((_a2 = server.httpServer) == null ? void 0 : _a2.address());

@@ -80,7 +80,7 @@ export function getDefinedConfig() {
   if (fs.existsSync(jsonPath)) {
     return readJSON(jsonPath);
   }
-  const jsPath = path.resolve(root, "header.config.mjs");
+  const jsPath = path.resolve(root, "header.config.js");
   if (fs.existsSync(jsPath)) {
     // eslint-disable-next-line unicorn/prefer-module
     return require(jsPath);
