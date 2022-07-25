@@ -1,0 +1,41 @@
+{
+  "name": "vite-plugin-tm",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "release": "node scripts/release.mjs",
+    "lint": "eslint src --ext .js,.ts --fix"
+  },
+  "author": "asadahimeka",
+  "license": "ISC",
+  "dependencies": {
+    "acorn-walk": "^8.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.7",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "chalk": "^5.0.1",
+    "enquirer": "^2.3.6",
+    "eslint": "^8.13.0",
+    "eslint-plugin-unicorn": "^42.0.0",
+    "execa": "^6.1.0",
+    "minimist": "^1.2.6",
+    "semver": "^7.3.7",
+    "tsup": "^5.12.5",
+    "typescript": "^4.6.3",
+    "vite": "^2.9.5"
+  }
+}
